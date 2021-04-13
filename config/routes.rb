@@ -1,3 +1,13 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get 'votes/create'
+  get 'votes/destroy'
+  get 'categories/index'
+  get 'categories/show'
+  get 'categories/new'
+  get 'categories/create'
+  get 'articles/index'
+  get 'articles/show'
+  get 'articles/new'
+  get 'articles/create'
+  devise_for :users
 end
