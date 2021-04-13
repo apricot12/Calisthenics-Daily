@@ -1,13 +1,8 @@
 Rails.application.routes.draw do
-  get 'votes/create'
-  get 'votes/destroy'
-  get 'categories/index'
-  get 'categories/show'
-  get 'categories/new'
-  get 'categories/create'
-  get 'articles/index'
-  get 'articles/show'
-  get 'articles/new'
-  get 'articles/create'
+  resources :articles, only: [:new, :create, :show] do
+    resources :votes, only: %i[create destroy]
+  end
   devise_for :users
+  resources :categories, only: %i[new create show index]
+  root 'categories#index'
 end
