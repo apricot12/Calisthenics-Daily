@@ -3,11 +3,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.0'
 
+gem 'bootstrap-will_paginate'
 gem 'devise'
+gem 'font-awesome-rails'
 gem 'hirb'
 gem 'will_paginate'
-gem 'bootstrap-will_paginate'
-gem 'font-awesome-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
 # Use postgresql as the database for Active Record

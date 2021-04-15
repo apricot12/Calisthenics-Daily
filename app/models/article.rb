@@ -4,5 +4,5 @@ class Article < ApplicationRecord
   belongs_to :author, class_name: 'User', foreign_key: 'user_id'
   has_many :votes
   belongs_to :category
-  has_one_attached :image, :dependent => :destroy
+  has_one_attached :image, dependent: :destroy
 end

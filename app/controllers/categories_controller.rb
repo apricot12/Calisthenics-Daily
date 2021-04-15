@@ -1,9 +1,9 @@
 class CategoriesController < ApplicationController
   before_action :authenticate_user!, except: [:index]
-  
+
   def index
     @categories = Category.all
-    @nav_categories = Category.all.limit(5)
+    @nav_categories = Category.all
     @articles = Article.all
   end
 
@@ -12,15 +12,14 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category_articles = Article.where('category_id = ?', params[:id]).paginate(page: params[:page],
-                                                                                per_page: 4).order(created_at: :desc)                                                                          
-    @category = Category.find(params[:id])
+    @category = Category.find_by(id: params[:id])
+    @category_articles = @category.articles.includes(:image_attachment).paginate(page: params[:page], per_page: 4).order(created_at: :desc)
   end
 
   def create
     @category = Category.new(params_cat)
     if @category.save
-      flash[:notice] = "New category created!"
+      flash[:notice] = 'New category created!'
       redirect_to root_path
     else
       render :new

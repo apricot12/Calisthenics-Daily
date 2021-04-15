@@ -1,15 +1,9 @@
-<div class='container-fluid height1 new-article'>
+<div class='container-fluid new-article'>
     <div class='col-8 mx-auto text-light fs-5 p-5 mx-3'>
-        <div class= 'text-dark'>
-            <%= render "devise/shared/error_messages", resource: @article %>
-        </div>
-
         <%= form_with model: @article do |f| %>
             <%= f.label :category, class:'m-2' %>
-            <div>
-            <%= collection_select(:article, :category_id ,Category.all, :id, :name)%>  
-            </div>
-            <div class=' my-3'>
+            <%= collection_select :article, :category_id ,Category.all, :id, :name, {}, class: "form-select"%>  
+            <div class='my-3'>
             <%= f.label :title, class:'m-2' %>
             <%= f.text_field :title, class: 'form-control' %>
             </div>
