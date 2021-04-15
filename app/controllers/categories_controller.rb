@@ -1,8 +1,10 @@
 class CategoriesController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
+  
   def index
     @categories = Category.all
-    @nav_categories = Category.all
-    # @articles_per_cat = Article.articles_per_category(@category.id)
+    @nav_categories = Category.all.limit(5)
+    @articles = Article.all
   end
 
   def new
