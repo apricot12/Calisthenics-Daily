@@ -11,6 +11,12 @@ class CategoriesController < ApplicationController
     @category = Category.new
   end
 
+  def show
+    @category_articles = Article.where('category_id = ?', params[:id]).paginate(page: params[:page],
+                                                                                per_page: 4).order(created_at: :desc)                                                                          
+    @category = Category.find(params[:id])
+  end
+
   def create
     @category = Category.new(params_cat)
     if @category.save
