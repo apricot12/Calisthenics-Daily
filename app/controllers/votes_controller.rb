@@ -20,7 +20,7 @@ class VotesController < ApplicationController
       redirect_to category_path(@article.category)
       flash[:notice] = "You have removed your upvote!"
     else
-      redirect_to category_path(@article.category)
+      redirect_to root_path
       flash[:notice] = "Oops! Something went wrong."
     end
   end

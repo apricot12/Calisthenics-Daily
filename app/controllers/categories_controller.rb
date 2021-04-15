@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
   def index
     @categories = Category.all
+    @nav_categories = Category.all
     @articles_per_cat = Article.articles_per_category(@category.id)
   end
 
