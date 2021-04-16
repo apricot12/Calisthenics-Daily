@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: aprikot-cloud
+  api_key: '246449737798949'
+  api_secret: WgtWF4rB6cbIW1vRQT1JZlfzZ0g
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: aprikot-cloud
+  api_key: '246449737798949'
+  api_secret: WgtWF4rB6cbIW1vRQT1JZlfzZ0g
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: aprikot-cloud
+  api_key: '246449737798949'
+  api_secret: WgtWF4rB6cbIW1vRQT1JZlfzZ0g
+  enhance_image_tag: true
+  static_file_support: false
