@@ -4,12 +4,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.0'
 
 gem 'bootstrap-will_paginate'
+gem 'capybara'
 gem 'cloudinary'
 gem 'devise'
 gem 'font-awesome-rails'
 gem 'hirb'
 gem 'will_paginate'
-gem 'capybara'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
 # Use postgresql as the database for Active Record
@@ -48,8 +48,8 @@ group :development do
   gem 'listen', '~> 3.3'
   gem 'rack-mini-profiler', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
   gem 'rspec-rails'
+  gem 'spring'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
