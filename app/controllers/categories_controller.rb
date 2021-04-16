@@ -4,7 +4,8 @@ class CategoriesController < ApplicationController
   def index
     @categories = Category.all
     @nav_categories = Category.all
-    @articles = Article.all
+    @category_article = @categories.map { |c| [c, c.articles.order(created_at: :desc).first] }
+    @most_popular = most_popular[0]
   end
 
   def new
@@ -13,7 +14,8 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find_by(id: params[:id])
-    @category_articles = @category.articles.includes(:image_attachment).paginate(page: params[:page], per_page: 4).order(created_at: :desc)
+    @category_articles = @category.articles.includes(:image_attachment).paginate(page: params[:page],
+                                                                                 per_page: 4).order(created_at: :desc)
   end
 
   def create
@@ -30,5 +32,14 @@ class CategoriesController < ApplicationController
 
   def params_cat
     params.require(:category).permit(:name)
+  end
+
+  def most_popular
+    @article_hash = Vote.includes(:article).group(:article).count
+    if @article_hash.empty?
+      [Article.first, nil]
+    else
+      @article_hash.max_by { |_article, article_counts| article_counts }
+    end
   end
 end

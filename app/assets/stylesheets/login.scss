@@ -1,14 +1,11 @@
 
 .login-photo {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    padding-left: 5rem;
-    align-items: center;
-    background: {
-      image: asset_url("login-bg.jpg");
-      position: center;
-      repeat: no-repeat;
-      size: cover;
-  }
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-left: 5rem;
+  align-items: center;
+  background-image: url("login-bg.jpg");
+  background-position: center;
+  background-size: cover;
 }

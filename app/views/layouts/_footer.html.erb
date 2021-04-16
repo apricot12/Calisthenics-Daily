@@ -1,6 +1,33 @@
 
-<div class= "footer-main">
-    <div>
-        <%= link_to 'CalisthenicsDaily', root_path %>
-    </div>
-</div>
+<footer class='px-3 mt-2'>
+
+    <p class='my-auto'>
+        <%= link_to 'CalisthenicsDaily', root_path, class: 'my-auto text-decoration-none text-white font-weight-bolder' %>
+    </p>
+
+    <ul class="d-none d-md-flex my-auto">
+    <%= link_to root_path do %>
+        <li class="text-decoration-none secondary-color mx-1">Privacy Policy</li>
+    <% end %>
+    <%= link_to root_path  do %>
+        <li class="text-decoration-none secondary-color mx-1">Terms & Conditions</li>
+    <% end %>
+        <li class=" text-white mx-1">Copyright 2014.</li>
+        <li class="text-white mx-1">All rights reserved.</li>
+    </ul>
+    <ul class="d-flex my-auto">
+    <li class='text-white' >Contact Us: </li>
+    <%= link_to 'https://github.com/apricot12'  do %>
+        <li class="link icon "><i class="fa fa-github" aria-hidden="true"></i></li>
+        
+    <% end %>
+    <%= link_to 'https://twitter.com/apricotfoxtrot'  do %>
+        <li class="link icon"> <i class="fa fa-twitter" aria-hidden="true"></i></li>
+    
+    <% end %>
+    <%= link_to 'https://www.linkedin.com/in/aprikot-web/'  do %>
+    <li class="link icon"><i class="fa fa-linkedin" aria-hidden="true"> </li></i>
+    <% end %>
+    </ul>
+
+</footer>

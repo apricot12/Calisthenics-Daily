@@ -1,7 +1,7 @@
 <div class='container-fluid'>
   <div class='row d-flex mb-5'>
     <div class='col-6 bg-light text-center position-relative'>
-      <div class='main-color text-decoration-underline m-3'>
+      <div class='secondary-color text-decoration-underline m-3'>
         <%= @article.category.name.upcase%>
       </div>
       <div class='text-dark fw-bolder'>
@@ -28,3 +28,4 @@
     <%= link_to 'Back', category_path(@article.category), class:'text-decoration-none btn btn-dark main-color' %>
   </div>
 </div>
+
