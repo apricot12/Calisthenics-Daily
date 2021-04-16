@@ -16,7 +16,7 @@ RSpec.describe 'CreateArticles', type: :system do
     click_link_or_button 'New Article'
     fill_in 'article[title]', with: 'Test name'
     fill_in 'article[text]', with: 'Test article body'
-    attach_file('article[image]', Rails.root + 'docs/ERD.png')
+    attach_file('article[image]', "#{Rails.root}/docs/ERD.png")
     click_button 'Create'
     expect(page).to have_text('Your article has been submitted!')
   end
@@ -32,7 +32,7 @@ RSpec.describe 'CreateArticles', type: :system do
     click_link_or_button 'New Article'
     fill_in 'article[title]', with: 'Test name2'
     fill_in 'article[text]', with: 'Test article body2'
-    attach_file('article[image]', Rails.root + 'docs/ERD.png')
+    attach_file('article[image]', "#{Rails.root}/docs/ERD.png")
     click_button 'Create'
     expect(page).to have_text('Your article has been submitted!')
   end
