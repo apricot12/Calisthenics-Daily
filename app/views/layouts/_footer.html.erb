@@ -6,14 +6,14 @@
     </p>
 
     <ul class="d-none d-md-flex my-auto">
-    <%= link_to root_path do %>
-        <li class="text-decoration-none secondary-color mx-1">Privacy Policy</li>
-    <% end %>
-    <%= link_to root_path  do %>
-        <li class="text-decoration-none secondary-color mx-1">Terms & Conditions</li>
-    <% end %>
-        <li class=" text-white mx-1">Copyright 2014.</li>
-        <li class="text-white mx-1">All rights reserved.</li>
+        <%= link_to root_path, class: "text-decoration-none secondary-color mx-1" do %>
+            <li>Privacy Policy</li>
+        <% end %>
+        <%= link_to root_path, class: "text-decoration-none secondary-color mx-1" do %>
+            <li>Terms & Conditions</li>
+        <% end %>
+            <li class="text-white mx-1">Copyright 2014.</li>
+            <li class="text-white mx-1">All rights reserved.</li>
     </ul>
     <ul class="d-flex my-auto">
     <li class='text-white' >Contact Us: </li>
