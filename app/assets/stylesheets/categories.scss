@@ -1,0 +1,19 @@
+// Place all the styles related to the categories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.new-category {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-left: 5rem;
+  align-items: center;
+  background-image: url("create-bg.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.categories-show,
+.home {
+  height: 100vh;
+}
