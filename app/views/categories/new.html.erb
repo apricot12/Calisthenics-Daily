@@ -1,14 +1,14 @@
 <div class='container-fluid py-5 new-category'>
-<div class='row col-6 mx-auto py-5 '>
-  <%= form_with model: @category do |f| %>
-    <div class=' mx-3 text-light'>
-      <p class= 'fs-4'>Enter category name</p>
-      <%= f.text_field :name,placeholder:'Category name', class:' form-control my-3' %>
+  <div class='row col-6 mx-auto py-5 '>
+    <%= form_with model: @category do |f| %>
+      <div class=' mx-3 text-light'>
+        <p class= 'fs-4'>Enter category name</p>
+        <%= f.text_field :name,placeholder:'Category name', class:' form-control my-3' %>
+      </div>
+      <%= f.submit :Create, class:'mx-3 my-3 btn btn-dark text-center' %>
+    <% end %>
+    <div>
+      <%= link_to 'Back', root_path, class:'btn btn-dark mx-3 my-3' %>
     </div>
-    <%= f.submit :Create, class:'mx-3 my-3 btn btn-dark text-center' %>
-  <% end %>
-  <div>
-    <%= link_to 'Back', root_path, class:'btn btn-dark mx-3 my-3' %>
   </div>
-</div>
 </div>
