@@ -2,10 +2,12 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!
 
   def show
+    navbar_cats
     @article = Article.find(params[:id])
   end
 
   def new
+    navbar_cats
     @article = Article.new
     @cat = Category.all
     @cat_menu = Category.all.map { |cat| [cat.name, cat.id] }
