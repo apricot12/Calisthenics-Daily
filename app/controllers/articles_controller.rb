@@ -9,7 +9,6 @@ class ArticlesController < ApplicationController
   def new
     navbar_cats
     @article = Article.new
-    @cat = Category.all
     @cat_menu = Category.all.map { |cat| [cat.name, cat.id] }
   end
 

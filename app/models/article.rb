@@ -5,4 +5,6 @@ class Article < ApplicationRecord
   has_many :votes
   belongs_to :category
   has_one_attached :image, dependent: :destroy
+
+  scope :articles_with_images, -> { includes(:image_attachment) }
 end
