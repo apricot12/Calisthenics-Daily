@@ -15,7 +15,7 @@ class CategoriesController < ApplicationController
     navbar_cats
     @category = Category.find_by(id: params[:id])
     @category_articles = @category.articles.articles_with_images.paginate(page: params[:page],
-                                                                                 per_page: 4).order(created_at: :desc)
+                                                                          per_page: 4).order(created_at: :desc)
   end
 
   def create
